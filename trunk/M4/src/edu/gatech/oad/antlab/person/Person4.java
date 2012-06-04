@@ -31,7 +31,8 @@ public class Person4 {
      */
     private String calc(String input) {
       //Person 1 put your implementation here
-      return null;
+    	//take the first two letter and 
+      return "hi";
     }
     
     /**
