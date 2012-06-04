@@ -9,9 +9,11 @@ package edu.gatech.oad.antlab.person;
  *  @version 1.1
  */
 public class Person4 {
+	
   /** Holds the persons real name */
   private String name;
-    /**
+   
+  /**
      * The constructor, takes in the persons
      * name
      * @param pname the person's real name
@@ -19,7 +21,8 @@ public class Person4 {
   public Person4(String pname) {
     name = pname;
   }
-    /**
+    
+  /**
      * This method should take the string
      * input and return its characters rotated
      * 2 positions.
@@ -30,9 +33,26 @@ public class Person4 {
      * @return the modified string
      */
     private String calc(String input) {
-      //Person 1 put your implementation here
-    	//take the first two letter and 
-      return "hi";
+
+    	String rot = "";
+    	String rest = "";
+    	
+    	//take the first two letter of the string that needs to be rotated
+    	for (int i = 0; i < 2; i++)
+    	{
+    		rot += input.charAt(i);
+    	}
+    	
+    	//take the string without the first two
+    	for (int i = 2; i < input.length(); i++)
+    	{
+    		rest += input.charAt(i);
+    	}
+    	
+    	//put rot at the end of rest
+    	rest = rest + rot;
+    	
+    	return rest;
     }
     
     /**
@@ -46,6 +66,5 @@ public class Person4 {
     public String toString(String input) {
       return name + calc(input);
     }
-
 }
 
