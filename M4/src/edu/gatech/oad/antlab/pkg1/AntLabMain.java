@@ -57,23 +57,28 @@ import edu.gatech.oad.antlab.pkg2.*;
         String toPrint = 
             ant11.getMessage() + ant12.getMessage() + ant21.getMessage()
           + ant22.getMessage() + ant31.getMessage();
-		  //Person1 replace P1 with your name
+		  
+        //Person1 replace P1 with your name
 		  //and ggg000x with your gt num
 		  Person1 p1 = new Person1("Raymond Garrison");
 		  toPrint += p1.toString("rgarrison3");
+		  
 		  //Person2 replace P2 with your name
 		  //and ggg000x with your gt num
 		  Person2 p2 = new Person2("P2");
 		  toPrint += p2.toString("ggg002x");
+		  
 		  //Person3 replace P3 with your name
 		  //and ggg000x with your gt num
 		  Person3 p3 = new Person3("Elizabeth Barsalou");
 		  toPrint += p3.toString("902856919");
-          //Person4 replace P4 with your name
+          
+		  //Person4 replace P4 with your name
           //and ggg000x with your gt num
-          Person4 p4 = new Person4("P4");
-          toPrint += p4.toString("ggg004x");
-		  //Person5 replace P5 with your name
+          Person4 p4 = new Person4("Eugene Park");
+          toPrint += p4.toString("902885517");
+		  
+          //Person5 replace P5 with your name
           //and ggg000x with your gt num
           Person5 p5 = new Person5("P5");
           toPrint += p5.toString("ggg005x");
