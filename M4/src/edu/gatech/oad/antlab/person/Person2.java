@@ -31,7 +31,24 @@ public class Person2 {
 	 */
 	private String calc(String input) {
 	  //Person 2 put your implementation here
-	  return null;
+	  String newString = "";
+	  String oldString = input;
+	  int size = input.length();
+	  int index;
+	  
+	  /*
+	   * Grabs a random character from the original string, then recreate the string without the "grabbed" character.
+	   * The character is then concatenated onto the new string to create a random shuffle of the original string.
+	   */
+	  while (size != 0) {
+		  index = (int) Math.floor((Math.random() * 10) % size);	// to get a random number from 0 to size-1
+		  char c = oldString.charAt(index);
+		  oldString = oldString.substring(0, index) + oldString.substring(index+1);
+		  newString += c;
+		  size--;
+	  }
+		  
+	  return newString;
 	}
 	/**
 	 * Return a string rep of this object
