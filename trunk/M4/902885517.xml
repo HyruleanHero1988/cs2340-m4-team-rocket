@@ -3,13 +3,13 @@
 
 <!-- init, prepare, compare, javadoc, jar, run, all, clean -->
 
-<project name="HelloWorld" basedir="." default="main">
-	
+<project name="902885517" basedir="." default="all">
 	
 	<target name="init">
 		<!-- Set up all your properties. Check SRC location-->
 		
 		<property name="src.dir" value="src"/>
+		<property name="lib.dir" value="lib"/>
 		<property name="build.dir" value="build"/>
 		<property name="apidoc.dir" value="apidoc"/>
 		<property name="classes.dir" value="${build.dir}/classes"/>
@@ -17,7 +17,7 @@
 		<property name="main-class" value="edu.gatech.oad.antlab.pkg1.AntLabMain"/>
 	</target>
 	
-	<target name="prepare">
+	<target name="prepare" depends="init">
 		<!-- Make all the required directories. Dont need to build src and build?-->
 		
 		<mkdir dir="${build.dir}"/>
@@ -29,7 +29,14 @@
 	<target name="compile" depends="prepare">
 		<!-- This will compile all java classes in the 'src' directory tree to the 'build' directory. -->
 		
-		<javac srcdir="${src.dir}" destdir="${classes.dir}"/>	
+		<javac srcdir="${src.dir}" destdir="${classes.dir}">
+		
+		<classpath>
+			<pathelement location="${lib.dir}/resources.jar"/>
+		</classpath>
+		
+		</javac>
+		
 	</target>
 	
 	<target name="javadoc">
@@ -37,12 +44,15 @@
          all java classes in the 'src' directory and will be
          stored in the 'apidoc' directory. -->
          
-		<javadoc sourcepath="${src.dir}" access="public" destdir="${apidoc.dir}/" packagenames="edu.gatech.oad.antdemo">
-		<excludepackage name="edu.gt.cs2340.lab2.test.*"/>
+		<javadoc sourcepath="${src.dir}" access="public" destdir="${apidoc.dir}/">
 
-		<bottom>
-			<![CDATA[<i>Copyright &#169; 2011 Team 15 CS2340. All Rights Reserved.</i>]]>
-		</bottom>
+			<bottom>
+				<![CDATA[<i>2012 Team Rocket(8) CS2340</i>]]>
+			</bottom>
+		
+			<classpath>
+				<pathelement location="${lib.dir}/resources.jar"/>
+			</classpath>
 		</javadoc>
 	</target>
 	
@@ -64,10 +74,14 @@
 	<target name="run" depends="jar">
 		<!-- This will start program execution and run the jar file created in the 'jar' task above. -->
 		
-		<java jar="${jar.dir}/AntLabRun.jar" fork="true"/>
+		<java jar="${jar.dir}/AntLabRun.jar" fork="true">
+			<classpath>
+				<pathelement location="${lib.dir}/resources.jar"/>
+			</classpath>	
+		</java>
 	</target>
 
-	<target name="all" depends="run">
+	<target name="all" depends="run, javadoc">
 		<!-- This should perform all of the above tasks (but NOT clean). -->
 		
 	</target>
