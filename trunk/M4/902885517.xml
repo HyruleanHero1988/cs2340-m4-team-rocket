@@ -17,6 +17,10 @@
 		<property name="main-class" value="edu.gatech.oad.antlab.pkg1.AntLabMain"/>
 	</target>
 	
+	<path id="classpath">
+		<fileset dir="${lib.dir}" includes="**/*.jar"/>
+	</path>
+	
 	<target name="prepare" depends="init">
 		<!-- Make all the required directories. Dont need to build src and build?-->
 		
@@ -29,14 +33,7 @@
 	<target name="compile" depends="prepare">
 		<!-- This will compile all java classes in the 'src' directory tree to the 'build' directory. -->
 		
-		<javac srcdir="${src.dir}" destdir="${classes.dir}">
-		
-		<classpath>
-			<pathelement location="${lib.dir}/resources.jar"/>
-		</classpath>
-		
-		</javac>
-		
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath"/>
 	</target>
 	
 	<target name="javadoc">
@@ -74,16 +71,16 @@
 	<target name="run" depends="jar">
 		<!-- This will start program execution and run the jar file created in the 'jar' task above. -->
 		
-		<java jar="${jar.dir}/AntLabRun.jar" fork="true">
+		<java fork="true" classname="${main-class}">
 			<classpath>
 				<pathelement location="${lib.dir}/resources.jar"/>
-			</classpath>	
+				<path location="${jar.dir}/AntLabRun.jar"/>
+			</classpath>
 		</java>
 	</target>
 
 	<target name="all" depends="run, javadoc">
 		<!-- This should perform all of the above tasks (but NOT clean). -->
-		
 	</target>
 	
 	<target name="clean">
