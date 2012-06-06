@@ -1,0 +1,67 @@
+<!--build-->
+<!--ebarsalou3.xml-->
+
+
+<project name="ebarsalou3" basedir="." default="main">
+	
+	<!--this will set up all of the properties-->
+	<target name="init">
+		<property name="src.dir" value="src"/>
+		<property name="build.dir" value="build"/>
+		<property name="classes.dir" value="${build.dir}/classes"/>
+		<property name="jar.dir" value="${build.dir}/jar"/>
+		<property name="main-class" value="edu.gatech.oad.antlab.pkg1.AntLabMain"/>
+		<property name="apidoc" value="apidoc"/>
+	</target>
+	
+	<!--this will remove all compiled classes, JARs created, and javadoc files-->
+	<target name="clean" depends="init">
+		<delete dir="${build.dir}"/>
+	</target>
+	
+	<!--this will make all of the directories-->
+	<target name="prepare" depends="init">
+		<mkdir dir="${src.dir}"/>
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${classes.dir}" />
+		<mkdir dir="${jar.dir}"/>
+		<mkdir dir="${main-class.dir}"/>
+		<mkdir dir="${apidoc.dir}"/>
+	</target>
+	
+	<!--compiles all classes in src directory to build directory-->
+	<target name="compile" depends="prepare">
+		<mkdir dir="${classes.dir}"/>
+		<javac srcdir="${src.dir}" destdir="${classes.dir}"/>
+	</target>
+	
+	<!--generate javadoc for all files in src directory and stored in apidoc-->
+	<target name="javadoc">
+		<javadoc sourcepath="${src.dir}" access="public" destdir="${apidoc.dir}/">
+			<bottom>
+			<![CDATA[<i>Team Rocket CS2340</i>]]>
+			</bottom>
+		</javadoc>
+	</target>
+	
+	<!--package all compiled class in AntLabRun.jar-->
+	<target name="jar" depends="compile">
+		<java jar="${jar.dir}/${AntLabRun}.jar" fork="true"/>
+	</target>
+		
+	<!--start program execution and run the jar file created in AntLabRun.jar-->
+	<target name="run" depends="jar">
+		<java fork="true" classname="Main-Class">
+			<classpath>
+				<pathelement location="${build.dir}"/>
+				<pathelement location="${jar.dir}"/>
+			</classpath>
+		</java>
+	</target>
+	
+	<!--performs all other tasks except clean-->
+	<target name="all" depends="run, javadoc">
+	</target>
+		
+	
+</project>
