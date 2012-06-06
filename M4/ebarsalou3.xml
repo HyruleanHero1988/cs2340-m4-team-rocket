@@ -12,6 +12,7 @@
 		<property name="classes.dir" value="${build.dir}/classes"/>
 		<property name="jar.dir" value="${build.dir}/jar"/>
 		<property name="main-class" value="edu.gatech.oad.antlab.pkg1.AntLabMain"/>
+		<property name="lib.dir" value="${lib.dir}"/>
 		<property name="apidoc" value="apidoc"/>
 	</target>
 	
@@ -36,7 +37,6 @@
 	
 	<!--compiles all classes in src directory to build directory-->
 	<target name="compile" depends="prepare">
-		
 		<javac srcdir="${src.dir}" destdir="${classes.dir}"/>
 	</target>
 	
@@ -44,7 +44,7 @@
 	<target name="javadoc">
 		<javadoc sourcepath="${src.dir}" access="public" destdir="${apidoc.dir}/">
 			<bottom>
-			<![CDATA[<i>Team Rocket CS2340</i>]]>
+			<![CDATA[<i>Copyright &#169; 2012 Team Rocket CS2340. All Rights Reserved.</i>]]>
 			</bottom>
 		</javadoc>
 	</target>
