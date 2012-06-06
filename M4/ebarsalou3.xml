@@ -7,12 +7,17 @@
 	<!--this will set up all of the properties-->
 	<target name="init">
 		<property name="src.dir" value="src"/>
+		<property name="lib.dir" value="lib"/>
 		<property name="build.dir" value="build"/>
 		<property name="classes.dir" value="${build.dir}/classes"/>
 		<property name="jar.dir" value="${build.dir}/jar"/>
 		<property name="main-class" value="edu.gatech.oad.antlab.pkg1.AntLabMain"/>
 		<property name="apidoc" value="apidoc"/>
 	</target>
+	
+		<path id="classpath">
+			<fileset dir="${lib.dir}" includes="**/*.jar"/>
+		</path>
 	
 	<!--this will remove all compiled classes, JARs created, and javadoc files-->
 	<target name="clean" depends="init">
@@ -21,17 +26,17 @@
 	
 	<!--this will make all of the directories-->
 	<target name="prepare" depends="init">
-		<mkdir dir="${src.dir}"/>
+		
 		<mkdir dir="${build.dir}"/>
 		<mkdir dir="${classes.dir}" />
 		<mkdir dir="${jar.dir}"/>
-		<mkdir dir="${main-class.dir}"/>
+		
 		<mkdir dir="${apidoc.dir}"/>
 	</target>
 	
 	<!--compiles all classes in src directory to build directory-->
 	<target name="compile" depends="prepare">
-		<mkdir dir="${classes.dir}"/>
+		
 		<javac srcdir="${src.dir}" destdir="${classes.dir}"/>
 	</target>
 	
@@ -46,8 +51,8 @@
 	
 	<!--package all compiled class in AntLabRun.jar-->
 	<target name="jar" depends="compile">
-		<mkdir dir="${jar.dir}"/>
-		<jar destfile="${jar.dir}/${ebarsalou3}.jar" basedir="${classes.dir}">
+		
+		<jar destfile="${jar.dir}/AntLabRun.jar" basedir="${classes.dir}">
 			<manifest>
 				<attribute name="Main-Class" value="${main-class}"/>
 			</manifest>
@@ -56,11 +61,12 @@
 		
 	<!--start program execution and run the jar file created in AntLabRun.jar-->
 	<target name="run" depends="jar">
-		<java jar="${jar.dir}/${ebarsalou3}.jar" fork="true"/>
+		<java fork="true" classname="${main-class}">
 		<classpath>
 			<pathelement location="${lib.dir}/resources.jar"/>
 			<path location="${jar.dir}/AntLabRun.jar"/>
 		</classpath>
+			</java>
 	</target>
 	
 	<!--performs all other tasks except clean-->
