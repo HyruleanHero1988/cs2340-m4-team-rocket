@@ -2,7 +2,7 @@
 <!--ebarsalou3.xml-->
 
 
-<project name="ebarsalou3" basedir="." default="main">
+<project name="ebarsalou3" basedir="." default="all">
 	
 	<!--this will set up all of the properties-->
 	<target name="init">
@@ -46,17 +46,21 @@
 	
 	<!--package all compiled class in AntLabRun.jar-->
 	<target name="jar" depends="compile">
-		<java jar="${jar.dir}/${AntLabRun}.jar" fork="true"/>
+		<mkdir dir="${jar.dir}"/>
+		<jar destfile="${jar.dir}/${ebarsalou3}.jar" basedir="${classes.dir}">
+			<manifest>
+				<attribute name="Main-Class" value="${main-class}"/>
+			</manifest>
+		</jar>
 	</target>
 		
 	<!--start program execution and run the jar file created in AntLabRun.jar-->
 	<target name="run" depends="jar">
-		<java fork="true" classname="Main-Class">
-			<classpath>
-				<pathelement location="${build.dir}"/>
-				<pathelement location="${jar.dir}"/>
-			</classpath>
-		</java>
+		<java jar="${jar.dir}/${ebarsalou3}.jar" fork="true"/>
+		<classpath>
+			<pathelement location="${lib.dir}/resources.jar"/>
+			<path location="${jar.dir}/AntLabRun.jar"/>
+		</classpath>
 	</target>
 	
 	<!--performs all other tasks except clean-->
