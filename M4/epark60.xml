@@ -87,5 +87,6 @@
 		<!--  This will remove any compiled classes and any JARs you created as well as any javadoc files -->
 		
 		<delete dir="${build.dir}"/>
+		<delete dir="${apidoc.dir}"/>
 	</target>
 </project>
