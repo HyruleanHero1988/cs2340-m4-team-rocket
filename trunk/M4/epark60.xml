@@ -3,7 +3,7 @@
 
 <!-- init, prepare, compare, javadoc, jar, run, all, clean -->
 
-<project name="902885517" basedir="." default="all">
+<project name="epark60" basedir="." default="all">
 	
 	<target name="init">
 		<!-- Set up all your properties. Check SRC location-->
