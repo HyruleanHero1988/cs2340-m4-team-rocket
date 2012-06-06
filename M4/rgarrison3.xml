@@ -1,95 +1,64 @@
-<!-- rgarrison3 Build File -->
+<!-- Raymond Garrison Build File -->
 <!-- rgarrison3.xml -->
-	
-<project name="rgarrison3" default="all" >
-	
-		<property  name="src.dir"		value="src"/>
-		<property  name="build.dir"		value="build"/>
-		<property  name="classes.dir"	value="${build.dir}/classes"/>
-		<property  name="jar.dir"		value="${build.dir}/jar"/>
-		<!-- <property  name="main-class"    value="${build.dir}.classes.edu.gatech.oad.antlab.pkg1.AntLab11"/>-->
-		<property  name="lib.dir"		value="lib"/>
-			
-		<path id="classpath">
-			<fileset dir="${lib.dir}" includes="**/*.jar"/>
-		</path>
-				
-			
-		
-		<target name="init">
-			<mkdir dir="build/classes"/>
-		</target>	
-			
-		<target  name="clean">
-			<delete  dir="${build.dir}"/>
-		</target>	
-		
-		<target  name="compile">
-			<mkdir dir="${classes.dir}"/>
-			<javac  srcdir="${src.dir}"  destdir="${classes.dir}" classpath="${lib.dir}/resources.jar"/>
-				<!--<classpath>
-					<pathelement location="${lib.dir}/resources.jar"/>
-				</classpath>	-->	
-		</target>
-				
-		<target  name="jar"  depends="compile">
-			<mkdir  dir="${jar.dir}"/>
-			
-			<jar  destfile="${jar.dir}/AntLabRun.jar"  basedir="${classes.dir}">
-				<!--<include name="edu/gatech/oad/antlab/pkg1/*.class"/>-->
-				<manifest>
-					<attribute  name="Main-Class"  value="edu.gatech.oad.antlab.pkg1.AntLabMain"/>
-					<attribute name="Class-Path" value="resources.jar"/>
-				</manifest>
-			</jar>		
-		</target>
-						
-    <target name="run" depends="jar">
-        <java fork="true" classname="Main-Class">
-            <classpath>
-                <path refid="classpath"/>
-                <path location="${jar.dir}/AntLabRun.jar"/>
-            </classpath>
-        </java>
-    </target>
-				
-		<target name="all" depends="init,run"/>
-			
-		<!-- DON'T FORGET JAVADOC METHOD -->	
-				
-				
 
-
-</project>
-<!--  Ant  hello  world  -->
-<!--  build.xml  -->
-
-<!--<project  name="HelloWorld"  basedir="."  default="main">
-
-	<property  name="src.dir"         value="src"/>
-	<property  name="build.dir"     value="build"/>
-	<property  name="classes.dir"  value="${build.dir}/classes"/>
-	<property  name="jar.dir"         value="${build.dir}/jar"/>
-	<property  name="main-class"    value="oata.HelloWorld"/>
-
-	<target  name="clean">
-		<delete  dir="${build.dir}"/>
+<project name="rgarrison3" basedir="." default="all">	
+	<target name="init" description="Sets all the paths needed for the build file to run properly">				
+		<property name="src.dir" value="src"/>
+		<property name="lib.dir" value="lib"/>
+		<property name="build.dir" value="build"/>
+		<property name="apidoc.dir" value="apidoc"/>
+		<property name="classes.dir" value="${build.dir}/classes"/>
+		<property name="jar.dir" value="${build.dir}/jar"/>
+		<property name="main-class" value="edu.gatech.oad.antlab.pkg1.AntLabMain"/>
 	</target>
-<target  name="compile">
-<mkdir  dir="${classes.dir}"/>
-<javac  srcdir="${src.dir}"  destdir="${classes.dir}"/>
-</target>
-<target  name="jar"  depends="compile">
-<mkdir  dir="${jar.dir}"/>
-<jar  destfile="${jar.dir}/${ant.project.name}.jar"  basedir="${classes.dir}">
-<manifest>
-<attribute  name="Main-Class"  value="${main-class}"/>
-</manifest>
-</jar>
-</target>
-<target  name="run"  depends="jar">
-<java  jar="${jar.dir}/${ant.project.name}.jar"  fork="true"/>
-</target>
-<target  name="clean-build"  depends="clean,jar"/>
-<target  name="main"  depends="clean,run"/>
-</project> -->
+	
+	<path id="classpath">
+		<fileset dir="${lib.dir}" includes="**/*.jar"/>
+	</path>
+	
+	<target name="prepare" depends="init" description="Makes necessary directories for the build">				
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${classes.dir}"/>
+		<mkdir dir="${jar.dir}"/>
+		<mkdir dir="${apidoc.dir}"/>
+	</target>
+	
+	<target name="compile" depends="prepare" description="Compiles the classes from the src directory into the classes directory">				
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath"/>
+	</target>
+	
+	<target name="javadoc" description="Generates javadoc files for the project in the apidoc directory.">         
+		<javadoc sourcepath="${src.dir}" access="public" destdir="${apidoc.dir}/">
+			<bottom>
+				<![CDATA[<i>Copyright &#169; 2012 Team Rocket -- CS2340.  All Rights Reserved.</i>]]>
+			</bottom>		
+			<classpath>
+				<pathelement location="${lib.dir}/resources.jar"/>
+			</classpath>
+		</javadoc>
+	</target>
+	
+	<target name="jar" depends="compile" description="Packages the compiled classes into a jar named AntLabRun.jar">				
+		<jar destfile="${jar.dir}/AntLabRun.jar" basedir="${classes.dir}">
+			<manifest>
+				<attribute name="Main-Class" value="${main-class}"/>
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="run" depends="jar" description="Runs AntLabRun.jar">				
+		<java fork="true" classname="${main-class}">
+			<classpath>
+				<pathelement location="${lib.dir}/resources.jar"/>
+				<path location="${jar.dir}/AntLabRun.jar"/>
+			</classpath>
+		</java>
+	</target>
+
+	<target name="all" depends="run, javadoc" description="Performs all of the above tasks, but does not perform clean."/>
+	
+	<target name="clean" description="Removes any compiled classes and .jars created, as well as the generated javadoc files.">
+		<delete dir="${build.dir}"/>
+		<delete dir="${apidoc.dir}"/>
+	</target>
+</project>
