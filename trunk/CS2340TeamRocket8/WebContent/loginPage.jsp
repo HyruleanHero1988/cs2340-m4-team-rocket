@@ -16,13 +16,17 @@
 			Password: <input type="text" name="pw"/><br>
 
 			
-			<input type="submit" value="Login!">
-			<input type="submit" value="Register">
+			<input type="submit" value="Login">
 			 <%
             	User currentUser = (User)session.getAttribute("currentSessionUser");
-         	
          	%>
+         	</center>
+		</form>
+		<form action="createUser.jsp">
+		<center>
+		<input type="submit" value="Register">
 		</center>
 		</form>
+		
 	</body>
 </html>

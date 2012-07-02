@@ -1,5 +1,7 @@
 package SeedApp;
 
+import java.util.ArrayList;
+
 public class User {
 	private String firstName;
 	private String lastName;
@@ -7,10 +9,13 @@ public class User {
 	private String password;
 	private String role;
 	
+	private Boolean newUser = false;
 	private boolean validUser = false;
 	public boolean valid = false;
 	private boolean locked = false;
 	private int numTry = 0;
+	
+	private ArrayList<Seed> seeds = new ArrayList<Seed>();
 	
 	public User(String first, String last, String user, String pass, String role, boolean vu, boolean v) //admin makes acc
 	{
@@ -19,13 +24,33 @@ public class User {
 		this.username = user;
 		this.password = pass;
 		this.role = role;
-		this.validUser = true;
-		this.valid = true;
+		this.validUser = vu;
+		this.valid = v;
 	}
 	
 	public User(String first, String last, String user, String pass) //user makes acc (can only make farmer acc)
 	{
 		this(first, last, user, pass, "farmer", true, true);
+	}
+	
+	public void addSeed (Seed seed)
+	{
+		seeds.add(seed);
+	}
+	
+
+	public Boolean existSeed()
+	{
+		if (seeds.isEmpty())
+		{
+			return false;
+		}
+		return true;
+	}
+	
+	public ArrayList getSeeds()
+	{
+		return seeds;
 	}
 	
 	public User() 
@@ -110,6 +135,12 @@ public class User {
     	  validUser = newValidUser;
       }
       
-    
-
+      public boolean isNewUser()
+      {
+    	  return newUser;
+      }
+      public void setNewUser(boolean newUser)
+      {
+    	  this.newUser = newUser;
+      }
 }
