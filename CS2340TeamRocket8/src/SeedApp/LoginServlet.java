@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	protected static HttpSession session;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -34,29 +35,36 @@ public class LoginServlet extends HttpServlet {
 			user.setPassword(request.getParameter("pw"));
 			
 			user = loginCheck.login(user);
-			
-			
+				
 			if(user.isValid())
 			{
 				if(user.isLocked())
 				{
-					HttpSession session = request.getSession(true);
+					session = request.getSession(true);
 					session.setAttribute("currentSessionUser", user);
 					response.sendRedirect("userLocked.jsp");
 				}
 				else
 				{
-					HttpSession session = request.getSession(true);
-					session.setAttribute("currentSessionUser", user);
-					response.sendRedirect("userLogged.jsp");
+					if (user.getRole().equals("admin"))
+					{
+						session = request.getSession(true);
+						session.setAttribute("currentSessionUser", user);
+						response.sendRedirect("adminHomepage.jsp");
+					}
+					else
+					{
+						session = request.getSession(true);
+						session.setAttribute("currentSessionUser", user);
+						response.sendRedirect("farmerHomepage.jsp");
+					}
 				}
-				
 			}
 			else
 			{
 				if(!user.isValidUser())
 				{
-					HttpSession session = request.getSession(true);
+					session = request.getSession(true);
 					session.setAttribute("currentSessionUser", user);
 					response.sendRedirect("invalidLogin.jsp");
 				}
@@ -64,19 +72,18 @@ public class LoginServlet extends HttpServlet {
 				{
 					if(user.isLocked())
 					{
-						HttpSession session = request.getSession(true);
+						session = request.getSession(true);
 						session.setAttribute("currentSessionUser", user);
 						response.sendRedirect("userLocked.jsp");
 					}
 					else
 					{
-						HttpSession session = request.getSession(true);
+						session = request.getSession(true);
 						session.setAttribute("currentSessionUser", user);
 						response.sendRedirect("wrongpassLogin.jsp");
 					}
 				}	
 			}
-			
 		}
 		catch(Throwable theException)
 		{

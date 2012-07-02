@@ -23,10 +23,10 @@
          %>
          	You have tried <%= currentUser.getNumTry()+ " times" %>
          	<br>
-         
             Sorry, wrong password!
+            <br>
+            Your account will be locked after 3 tries unless attempting to access admin account!
             
-           
          </center>
       </body>
 	
