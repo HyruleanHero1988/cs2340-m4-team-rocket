@@ -36,6 +36,10 @@
            	<form action="viewNewUser.jsp">
            	<input type="submit" value="View">
            	</form>
+           	View all users
+           	<form action="viewAllUser.jsp">
+           	<input type="submit" value="View">
+           	</form>
            	
            	
          </center>

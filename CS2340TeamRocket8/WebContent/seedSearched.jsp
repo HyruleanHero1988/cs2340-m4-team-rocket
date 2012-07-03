@@ -27,6 +27,32 @@
 					     			);
 				if (userDatabase.haveSeed(seed))
 				{
+					if (!request.getParameter("sn").equals("") && !request.getParameter("zn").equals(""))
+					{
+						%>
+						<center>
+							You searched for: <%= seed.getName() %><br>
+							You searched for Zone: <%= seed.getZone() %><br>
+						</center>
+						<% 
+					}
+					else if (request.getParameter("sn").equals(""))
+					{
+						%>
+						<center>
+							You searched for Zone: <%= seed.getZone() %><br>
+						</center>
+						<% 
+					}
+					else
+					{
+						%>
+						<center>
+							You searched for Zone: <%= seed.getName() %><br>
+						</center>
+						<% 
+					}
+					
 					ArrayList<User> users = userDatabase.getUsers();
 					for (int i = 0; i < users.size(); i++)
 					{
@@ -38,7 +64,8 @@
 							{
 								if (seeds.get(j).getName().equals(seed.getName()))
 								{
-									%>
+									%> 
+										
 										<center>
 										<TABLE style="background-color: #ECE5B6;" WIDTH="50%">
 											<tr>
@@ -71,14 +98,43 @@
 				}
 				else
 				{
+					if (!request.getParameter("sn").equals("") && !request.getParameter("zn").equals(""))
+					{
+						%>
+						<center>
+							You searched for: <%= seed.getName() %><br>
+							You searched for Zone: <%= seed.getZone() %><br>
+						</center>
+						<% 
+					}
+					else if (request.getParameter("sn").equals(""))
+					{
+						%>
+						<center>
+							You searched for Zone: <%= seed.getZone() %><br>
+						</center>
+						<% 
+					}
+					else
+					{
+						%>
+						<center>
+							You searched for Zone: <%= seed.getName() %><br>
+						</center>
+						<% 
+					}
 					%>
+					<center>
 						0 Search Results
+						</center>
 					<% 
 				}
 			}
 		%>
+		<center>
 		<form action="farmerHomepage.jsp">
 		<input type="submit" value="Go Back">
 		</form>
+		</center>
 </body>
 </html>
