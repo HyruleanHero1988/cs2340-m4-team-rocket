@@ -28,6 +28,13 @@ public class Seed {
 		this.count = count;
 	}
 	
+	public Seed(String sn, String zn, String ct)
+	{
+		this.sName = sn;
+		this.zone = zn;
+		this.count = ct;
+	}
+	
 	public Seed(String sn, String zn, Boolean b)
 	{
 		this.sName = sn;

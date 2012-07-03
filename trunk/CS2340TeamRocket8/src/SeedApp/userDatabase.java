@@ -21,12 +21,33 @@ public class userDatabase {
 			
 			User user6 = new User("Farmer", "park", "Farmer", "1234", "farmer", true, true);
 			
-			user2.addSeed(new Seed("Buffalo Grass", "100"));
-			user2.addSeed(new Seed("Browntop", "24"));
+			User user7 = new User("James", "", "UMichigan", "1234", "farmer", true, true);
+			User user8 = new User("John", "", "UMAIMI", "1234", "farmer", true, true);
+			User user9 = new User("Alex", "", "UFLORIDA", "1234", "farmer", true, true);
+			User user10 = new User("Jake", "", "Florida State", "1234", "farmer", true, true);
+			
+			user2.addSeed(new Seed("Buffalo Grass", "3","64"));
+			user2.addSeed(new Seed("Browntop", "7","11"));
+			user2.addSeed(new Seed("Cabbage", "7","456"));
+			user2.addSeed(new Seed("Carrots", "3","65"));
+			
+			user7.addSeed(new Seed("Buffalo Grass","3", "1256"));
+			user7.addSeed(new Seed("Browntop", "7","34"));
+			user7.addSeed(new Seed("Butterfly Weed", "3","23"));
+			
+			user8.addSeed(new Seed("Buffalo Grass", "3","661"));
+			user8.addSeed(new Seed("Browntop", "7","1143"));
+			
+			user9.addSeed(new Seed("Buffalo Grass","3", "8"));
+			user9.addSeed(new Seed("Browntop", "7","1"));
+			
+			user10.addSeed(new Seed("Buffalo Grass", "3","89"));
+			user10.addSeed(new Seed("Browntop", "7","89"));
 			
 			user3.setLocked(true);
 			user4.setLocked(true);
 			user5.setNewUser(true);
+			user9.setNewUser(true);
 			
 			users.add(user1);
 			users.add(user2);
@@ -34,6 +55,10 @@ public class userDatabase {
 			users.add(user4);
 			users.add(user5);
 			users.add(user6);
+			users.add(user7);
+			users.add(user8);
+			users.add(user9);
+			users.add(user10);
 			
 			System.out.println("Database is Empty! Creating Users");
 		}

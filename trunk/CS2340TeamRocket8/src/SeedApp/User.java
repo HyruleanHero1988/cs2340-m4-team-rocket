@@ -8,6 +8,7 @@ public class User {
 	private String username;
 	private String password;
 	private String role;
+	private String email;
 	
 	private Boolean newUser = false;
 	private boolean validUser = false;

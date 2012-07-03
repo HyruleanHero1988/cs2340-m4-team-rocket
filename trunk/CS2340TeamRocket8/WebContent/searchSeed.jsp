@@ -11,6 +11,7 @@
 	<h1> Search By: </h1>
 	<form action="seedSearched.jsp">
 		Scientific Name: <input type="text" name="sn"/><br>
+		And/Or
 		Zone: <input type="text" name="zn"/><br>
 		<input type="submit" value="Search">
 	</form>
