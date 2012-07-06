@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
+ * @author Team Rocket
+ * @version 1.0
  * Servlet implementation class RegisterServlet
  */
 @WebServlet("/RegisterServlet")
