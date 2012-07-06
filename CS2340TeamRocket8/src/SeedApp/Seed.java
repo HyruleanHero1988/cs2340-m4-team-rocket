@@ -1,7 +1,10 @@
 package SeedApp;
 
 import java.util.Date;
-
+/**
+ * @author Team Rocket
+ * @version 1.0
+ */
 public class Seed {
 	private String commonName;
 	private String sName;
@@ -10,7 +13,17 @@ public class Seed {
 	private String harvestingInfo;
 	private String season;
 	private String count;
-
+	
+	/**
+	 * represents a seed
+	 * @param cn common name
+	 * @param sn scientific name
+	 * @param zone farming zone
+	 * @param tips growing tips
+	 * @param hi harvesting info
+	 * @param season harvesting season
+	 * @param count number of seeds
+	 */
 	public Seed(String cn, String sn, String zone, String tips, String hi, String season, String count)
 	{
 		this.commonName = cn;
@@ -22,12 +35,23 @@ public class Seed {
 		this.count = count;
 	}
 	
+	/**
+	 * 
+	 * @param sn scienfic name
+	 * @param count number of seeds
+	 */
 	public Seed(String sn, String count)
 	{
 		this.sName = sn;
 		this.count = count;
 	}
 	
+	/**
+	 * 
+	 * @param sn scientific name
+	 * @param zn growing zone
+	 * @param ct seed count
+	 */
 	public Seed(String sn, String zn, String ct)
 	{
 		this.sName = sn;
@@ -35,6 +59,12 @@ public class Seed {
 		this.count = ct;
 	}
 	
+	/**
+	 * 
+	 * @param sn scientific name
+	 * @param zn growing zone
+	 * @param b
+	 */
 	public Seed(String sn, String zn, Boolean b)
 	{
 		this.sName = sn;

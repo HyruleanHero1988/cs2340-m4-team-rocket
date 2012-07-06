@@ -2,6 +2,10 @@ package SeedApp;
 
 import java.util.ArrayList;
 
+/**
+ * @author Team Rocket
+ * @version 1.0
+ */
 public class User {
 	private String firstName;
 	private String lastName;
@@ -18,6 +22,16 @@ public class User {
 	
 	private ArrayList<Seed> seeds = new ArrayList<Seed>();
 	
+	/**
+	 * Represents user
+	 * @param first name
+	 * @param last name
+	 * @param user username
+	 * @param pass password
+	 * @param role admin or farmer
+	 * @param vu valid user
+	 * @param v valid
+	 */
 	public User(String first, String last, String user, String pass, String role, boolean vu, boolean v) //admin makes acc
 	{
 		this.firstName = first;
@@ -34,12 +48,17 @@ public class User {
 		this(first, last, user, pass, "farmer", true, true);
 	}
 	
+	/*
+	 * @param seed to be added to user's account
+	 */
 	public void addSeed (Seed seed)
 	{
 		seeds.add(seed);
 	}
 	
-
+	/*
+	 * @return whether user has any seeds
+	 */
 	public Boolean existSeed()
 	{
 		if (seeds.isEmpty())
@@ -49,6 +68,9 @@ public class User {
 		return true;
 	}
 	
+	/*
+	 * @return all the seeds associated w/ users accoutn
+	 */
 	public ArrayList getSeeds()
 	{
 		return seeds;

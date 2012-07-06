@@ -1,4 +1,8 @@
 package SeedApp;
+/**
+ * @author Team Rocket
+ * @version 1.0
+ */
 
 import java.util.ArrayList;
 
@@ -68,6 +72,11 @@ public class userDatabase {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param seed Checks to see if any user in the database has a specific seed
+	 * @return boolean true if the seed is owned by a user in the database, false if it is not
+	 */
 	public static Boolean haveSeed (Seed seed)
 	{
 		ArrayList<Seed> seeds;
@@ -97,6 +106,11 @@ public class userDatabase {
 		return false;
 	}
 	
+	/**
+	 * 
+	 * @param user The user to be added to the database
+	 * @return boolean true if the user is not already in the database and is added to the database and false if it already exists
+	 */
 	public static Boolean userAdd(User user)
 	{
 		String tmpUN, tmpPW;
@@ -118,6 +132,12 @@ public class userDatabase {
 		return true;
 	}
 	
+	/**
+	 * Checks if user is in database, and if username and password match returns the user
+	 * if username and password don't match after 3 tries, sets the user as locked, unless is an admin
+	 * @param user
+	 * @return
+	 */
 	public static User check(User user)
 	{
 		String tmpUN, tmpPW;
@@ -183,6 +203,10 @@ public class userDatabase {
 		return false;
 	}
 	
+	/**
+	 * checks if user is locked out
+	 * @return boolean true if locked out, false if not
+	 */
 	public static Boolean existNewUser()
 	{
 		for (int i = 0; i < users.size(); i++)
