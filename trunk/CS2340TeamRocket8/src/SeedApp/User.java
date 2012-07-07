@@ -166,4 +166,8 @@ public class User {
       {
     	  this.newUser = newUser;
       }
+      
+      public String toString(){
+    	  return firstName + ", " + lastName + ", " + username + ", " +password + ", " +role + ", " +email + ", " +newUser + ", " +validUser + ", " +valid + ", " +locked + ", " +numTry; 
+      }
 }
