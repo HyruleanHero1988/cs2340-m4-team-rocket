@@ -7,17 +7,20 @@ package SeedApp;
 import java.util.ArrayList;
 import java.io.*;
 import java.util.*;
+import java.net.URL;
 
 public class userDatabase {
 	
 	protected static ArrayList<User> users = new ArrayList<User>();
-	//File f = new File("List_of_Users.txt");
+	
+	
 	
 	public static void init()
 	{
 		//so it doesnt keep create new users, do this check
 		if (users.isEmpty())
 		{
+			
 			/*User user1 = new User("AdminEugene", "park", "Adeugene", "1234", "admin", true, true);
 			User user2 = new User("FarmerEugene", "park", "Fmeugene", "1234", "farmer", true, true);
 			
@@ -75,7 +78,7 @@ public class userDatabase {
 				System.out.println("List of users not found.");
 			}			
 			
-			 f = new File("src/new_List_of_Users.txt");			
+			 f = new File( "List_of_Users.txt");			
 			
 			try {
 				System.out.println("Trying to save users");
@@ -151,7 +154,7 @@ public class userDatabase {
 		createUser.setNewUser(true);
 		users.add(createUser);
 		
-		File f = new File("src/List_of_Users.txt");
+		File f = new File("List_of_Users.txt");
 		try {			
 			userDatabase.saveTo(f);
 		} catch (IOException e) {
@@ -207,7 +210,7 @@ public class userDatabase {
 			}	
 		}
 		
-		File f = new File("src/List_of_Users.txt");
+		File f = new File("List_of_Users.txt");
 		try {
 			userDatabase.saveTo(f);
 		} catch (IOException e) {
