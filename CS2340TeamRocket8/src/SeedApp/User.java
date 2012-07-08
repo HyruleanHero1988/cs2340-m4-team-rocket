@@ -58,7 +58,7 @@ public class User {
 	public void addSeed (Seed seed)
 	{
 		seeds.add(seed);
-		File f = new File("src/List_of_Users.txt");
+		File f = new File("List_of_Users.txt");
 		try {
 			userDatabase.saveTo(f);
 		} catch (IOException e) {

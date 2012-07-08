@@ -20,6 +20,7 @@
 
             Sorry, you are not a registered user! Please sign up first
             
+            	<br><a href="loginPage.jsp">Back to log in</a> 
          </center>
       </body>
 	
