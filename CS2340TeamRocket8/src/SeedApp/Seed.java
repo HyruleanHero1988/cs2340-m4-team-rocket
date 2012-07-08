@@ -90,4 +90,8 @@ public class Seed {
 	{
 		return count;
 	}
+	
+	public String toString(){
+		return "Seed" + ", " + sName + ", " + zone + ", " + tips + ", " + harvestingInfo + ", " + season + ", " + count;
+	}
 }

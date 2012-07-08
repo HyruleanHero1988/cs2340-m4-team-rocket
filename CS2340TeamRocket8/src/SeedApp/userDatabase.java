@@ -48,8 +48,8 @@ public class userDatabase {
 			user9.addSeed(new Seed("Buffalo Grass","3", "8"));
 			user9.addSeed(new Seed("Browntop", "7","1"));
 			
-			user10.addSeed(new Seed("Buffalo Grass", "3","89"));
-			user10.addSeed(new Seed("Browntop", "7","89"));
+			//user10.addSeed(new Seed("Buffalo Grass", "3","89"));
+			//user10.addSeed(new Seed("Browntop", "7","89"));
 			
 			user3.setLocked(true);
 			user4.setLocked(true);
@@ -70,8 +70,8 @@ public class userDatabase {
 			File f = new File("List_of_Users.txt");
 			try {
 				System.out.println("Trying to save users");
-				System.out.println(user1.toString());
-				System.out.println(users.get(2).toString());
+				//System.out.println(user1.toString());
+				//System.out.println(users.get(2).toString());
 				userDatabase.saveTo(f);
 			} catch (IOException e) {
 				System.out.println("I couldn't save your users.");
@@ -144,9 +144,7 @@ public class userDatabase {
 		
 		File f = new File("List_of_Users.txt");
 		try {
-			System.out.println("Trying to save users");
-			System.out.println(createUser.toString());
-			System.out.println(users.get(2).toString());
+			System.out.println("Trying to save users");			
 			userDatabase.saveTo(f);
 		} catch (IOException e) {
 			System.out.println("I couldn't save your users.");
@@ -203,6 +201,16 @@ public class userDatabase {
 				}
 			}	
 		}
+		
+		File f = new File("List_of_Users.txt");
+		try {
+			System.out.println("Trying to save users");
+			//System.out.println(users.get(2).toString());
+			userDatabase.saveTo(f);
+		} catch (IOException e) {
+			System.out.println("I couldn't save your users.");
+		}
+		
 		return user;
 	}
 	
@@ -246,6 +254,7 @@ public class userDatabase {
 	
 	public static void saveTo(File f) throws IOException {
 		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(f)));
+		//ArrayList<Seed> seeds = new ArrayList<Seed>();
 		
 		//writer.println("Test1 ");
 		//writer.println("Test2");
@@ -253,6 +262,18 @@ public class userDatabase {
 		
 		for(User user : users) {
 			writer.println(user);
+			ArrayList<Seed> seeds = new ArrayList<Seed>();
+			
+			if(user.existSeed()){
+				seeds = user.getSeeds();
+				
+				for(Seed seed : seeds){
+					System.out.println("trying to save seeds");
+					writer.println(seed);
+				}
+			}
+			
+			
 		}
 		
 		writer.flush();

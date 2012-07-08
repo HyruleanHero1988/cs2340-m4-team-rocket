@@ -32,6 +32,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try
 		{
+			userDatabase.init();
 			User user = new User();
 			user.setUserName(request.getParameter("un"));
 			user.setPassword(request.getParameter("pw"));
