@@ -10,6 +10,7 @@
    <html>
 
       <head>
+      <body bgcolor="#ffffcc">
          <meta http-equiv="Content-Type" 
             content="text/html; charset=windows-1256">
          <title>   Admin Logged Successfully   </title>
@@ -40,10 +41,10 @@
            	<form action="viewAllUser.jsp">
            	<input type="submit" value="View">
            	</form>
-           	
+           	<br><a href="loginPage.jsp">Log out</a> 
            	
          </center>
-
+	
       </body>
 	
    </html>

@@ -18,7 +18,7 @@ public class userDatabase {
 		//so it doesnt keep create new users, do this check
 		if (users.isEmpty())
 		{
-			User user1 = new User("AdminEugene", "park", "Adeugene", "1234", "admin", true, true);
+			/*User user1 = new User("AdminEugene", "park", "Adeugene", "1234", "admin", true, true);
 			User user2 = new User("FarmerEugene", "park", "Fmeugene", "1234", "farmer", true, true);
 			
 			User user3 = new User("LockedUser", "park", "blah1", "1234", "farmer", true, true);
@@ -65,9 +65,18 @@ public class userDatabase {
 			users.add(user7);
 			users.add(user8);
 			users.add(user9);
-			users.add(user10);
+			users.add(user10);*/
 			
 			File f = new File("List_of_Users.txt");
+			
+			try {
+				userDatabase.loadFrom(f);
+			} catch (FileNotFoundException e) {
+				System.out.println("List of users not found.");
+			}			
+			
+			 f = new File("src/new_List_of_Users.txt");			
+			
 			try {
 				System.out.println("Trying to save users");
 				//System.out.println(user1.toString());
@@ -142,16 +151,12 @@ public class userDatabase {
 		createUser.setNewUser(true);
 		users.add(createUser);
 		
-		File f = new File("List_of_Users.txt");
-		try {
-			System.out.println("Trying to save users");			
+		File f = new File("src/List_of_Users.txt");
+		try {			
 			userDatabase.saveTo(f);
 		} catch (IOException e) {
 			System.out.println("I couldn't save your users.");
-		}
-		
-		
-		
+		}	
 		return true;
 	}
 	
@@ -202,10 +207,8 @@ public class userDatabase {
 			}	
 		}
 		
-		File f = new File("List_of_Users.txt");
+		File f = new File("src/List_of_Users.txt");
 		try {
-			System.out.println("Trying to save users");
-			//System.out.println(users.get(2).toString());
 			userDatabase.saveTo(f);
 		} catch (IOException e) {
 			System.out.println("I couldn't save your users.");
@@ -252,32 +255,102 @@ public class userDatabase {
 		return false;
 	}
 	
+	/**
+	 * Saves variables to an external text file
+	 * @param f the file to write to
+	 * @throws IOException IO error
+	 */
 	public static void saveTo(File f) throws IOException {
-		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(f)));
-		//ArrayList<Seed> seeds = new ArrayList<Seed>();
-		
-		//writer.println("Test1 ");
-		//writer.println("Test2");
-		
+		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(f)));	
 		
 		for(User user : users) {
 			writer.println(user);
 			ArrayList<Seed> seeds = new ArrayList<Seed>();
 			
 			if(user.existSeed()){
-				seeds = user.getSeeds();
-				
-				for(Seed seed : seeds){
-					System.out.println("trying to save seeds");
+				seeds = user.getSeeds();				
+				for(Seed seed : seeds){					
 					writer.println(seed);
 				}
-			}
-			
-			
-		}
-		
+			}			
+		}		
 		writer.flush();
 		writer.close();
+	}
+	
+	/**
+	 * Loads variables from an external text file
+	 * @param f file to read in
+	 * @throws FileNotFoundException file not found
+	 */
+	public static void loadFrom(File f) throws FileNotFoundException {
+		Scanner scan = new Scanner(f);
+		
+		String firstName;
+		String lastName;
+		String username;
+		String password;
+		String role;
+		String email;
+		
+		String newUserBool;
+		String validUser;
+		String valid;
+		String locked;
+		String numTry;
+		
+		String commonName;
+		String sName;
+		String zone;
+		String tips;
+		String harvestingInfo;
+		String season;
+		String count;
+		
+		User newUser = null;
+		
+		while(scan.hasNextLine()) {
+			String nextLine = scan.nextLine();
+			String[] filePieces = nextLine.split(",");			
+			String firstElement = filePieces[0].trim();
+			
+			if(firstElement.equals("User")){
+				firstName = filePieces[1].trim();
+				lastName = filePieces[2].trim();
+				username = filePieces[3].trim();
+				password = filePieces[4].trim();
+				role = filePieces[5].trim();
+				email = filePieces[6].trim();
+				
+				newUserBool = filePieces[7].trim();
+				validUser = filePieces[8].trim();
+				valid = filePieces[9].trim();
+				locked = filePieces[10].trim();
+				numTry = filePieces[11].trim();
+				
+				newUser = new User(firstName, lastName, username, password, role, Boolean.parseBoolean(validUser),Boolean.parseBoolean(valid) );
+				
+				newUser.setNumTry(Integer.parseInt(numTry));
+				newUser.setNewUser(Boolean.parseBoolean(newUserBool));
+				newUser.setLocked(Boolean.parseBoolean(locked));			
+				
+				users.add(newUser);
+			} else if(firstElement.equals("Seed")){
+				commonName = filePieces[1].trim();
+				sName = filePieces[2].trim();
+				zone = filePieces[3].trim();
+				tips = filePieces[4].trim();
+				harvestingInfo = filePieces[5].trim();
+				season = filePieces[6].trim();
+				count = filePieces[7].trim();
+				
+				Seed newSeed = new Seed(commonName, sName, zone, tips, harvestingInfo, season, count);
+				
+				if(newUser != null){
+					newUser.addSeed(newSeed);
+				}				
+			}			
+		}//end scan while loop
 	}
 	
 }
