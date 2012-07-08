@@ -5,10 +5,13 @@ package SeedApp;
  */
 
 import java.util.ArrayList;
+import java.io.*;
+import java.util.*;
 
 public class userDatabase {
 	
 	protected static ArrayList<User> users = new ArrayList<User>();
+	//File f = new File("List_of_Users.txt");
 	
 	public static void init()
 	{
@@ -63,6 +66,13 @@ public class userDatabase {
 			users.add(user8);
 			users.add(user9);
 			users.add(user10);
+			
+			File f = new File("List_of_Users.txt");
+			try {
+				userDatabase.saveTo(f);
+			} catch (IOException e) {
+				System.out.println("I couldn't save your users.");
+			}
 			
 			System.out.println("Database is Empty! Creating Users");
 		}
@@ -128,6 +138,9 @@ public class userDatabase {
 		User createUser = new User(user.getFirstName(), user.getLastName(), user.getUsername(), user.getPassword());
 		createUser.setNewUser(true);
 		users.add(createUser);
+		
+		
+		
 		
 		return true;
 	}
@@ -217,6 +230,17 @@ public class userDatabase {
 			}
 		}
 		return false;
+	}
+	
+	public static void saveTo(File f) throws IOException {
+		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(f)));
+		
+		for(User user : users) {
+			writer.println(user);
+		}
+		
+		writer.flush();
+		writer.close();
 	}
 	
 }
