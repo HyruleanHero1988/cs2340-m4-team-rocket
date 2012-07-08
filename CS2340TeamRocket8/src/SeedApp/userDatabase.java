@@ -78,7 +78,7 @@ public class userDatabase {
 				System.out.println("List of users not found.");
 			}			
 			
-			 f = new File( "List_of_Users.txt");			
+			 /*f = new File( "new_List_of_Users.txt");			
 			
 			try {
 				System.out.println("Trying to save users");
@@ -87,7 +87,7 @@ public class userDatabase {
 				userDatabase.saveTo(f);
 			} catch (IOException e) {
 				System.out.println("I couldn't save your users.");
-			}
+			}*/
 			
 			System.out.println("Database is Empty! Creating Users");
 		}
