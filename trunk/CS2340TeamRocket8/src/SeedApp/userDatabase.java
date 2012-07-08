@@ -69,6 +69,9 @@ public class userDatabase {
 			
 			File f = new File("List_of_Users.txt");
 			try {
+				System.out.println("Trying to save users");
+				System.out.println(user1.toString());
+				System.out.println(users.get(2).toString());
 				userDatabase.saveTo(f);
 			} catch (IOException e) {
 				System.out.println("I couldn't save your users.");
@@ -139,6 +142,15 @@ public class userDatabase {
 		createUser.setNewUser(true);
 		users.add(createUser);
 		
+		File f = new File("List_of_Users.txt");
+		try {
+			System.out.println("Trying to save users");
+			System.out.println(createUser.toString());
+			System.out.println(users.get(2).toString());
+			userDatabase.saveTo(f);
+		} catch (IOException e) {
+			System.out.println("I couldn't save your users.");
+		}
 		
 		
 		
@@ -234,6 +246,10 @@ public class userDatabase {
 	
 	public static void saveTo(File f) throws IOException {
 		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(f)));
+		
+		//writer.println("Test1 ");
+		//writer.println("Test2");
+		
 		
 		for(User user : users) {
 			writer.println(user);
