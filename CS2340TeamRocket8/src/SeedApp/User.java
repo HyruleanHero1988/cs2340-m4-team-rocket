@@ -16,7 +16,7 @@ public class User {
 	private String role;
 	private String email;
 	
-	private Boolean newUser = false;
+	private boolean newUser = false;
 	private boolean validUser = false;
 	public boolean valid = false;
 	private boolean locked = false;
@@ -43,29 +43,27 @@ public class User {
 		this.role = role;
 		this.validUser = vu;
 		this.valid = v;
+		
 	}
 	
 	public User(String first, String last, String user, String pass) //user makes acc (can only make farmer acc)
 	{
 		this(first, last, user, pass, "farmer", true, true);
-	}
+	}	
 	
-	/*
+	/**
+	 * method to add seeds to a user account
 	 * @param seed to be added to user's account
 	 */
 	public void addSeed (Seed seed)
 	{
 		seeds.add(seed);
-		File f = new File("List_of_Users.txt");
+		File f = new File("src/List_of_Users.txt");
 		try {
-			System.out.println("Trying to save users");
-			//System.out.println(user1.toString());
-			//System.out.println(users.get(2).toString());
 			userDatabase.saveTo(f);
 		} catch (IOException e) {
 			System.out.println("I couldn't save your users.");
-		}
-		//System.out.println(seeds(1).toString());
+		}		
 	}
 	
 	/*
@@ -144,6 +142,8 @@ public class User {
 	{
 		this.numTry = num;
 	}
+	
+	
 	 
 	 public boolean isValid() {
          return valid;

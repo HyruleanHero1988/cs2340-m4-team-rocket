@@ -92,6 +92,6 @@ public class Seed {
 	}
 	
 	public String toString(){
-		return "Seed" + ", " + sName + ", " + zone + ", " + tips + ", " + harvestingInfo + ", " + season + ", " + count;
+		return "Seed" + ", " + commonName + ", " + sName + ", " + zone + ", " + tips + ", " + harvestingInfo + ", " + season + ", " + count;
 	}
 }

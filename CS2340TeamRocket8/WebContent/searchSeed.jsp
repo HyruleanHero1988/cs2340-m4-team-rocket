@@ -14,6 +14,8 @@
 		And/Or
 		Zone: <input type="text" name="zn"/><br>
 		<input type="submit" value="Search">
+		
+		<br><a href="farmerHomepage.jsp">Back to Home Page</a> 
 	</form>
 	</center>
 	
