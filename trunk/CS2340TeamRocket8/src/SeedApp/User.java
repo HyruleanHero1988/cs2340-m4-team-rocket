@@ -1,5 +1,7 @@
 package SeedApp;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -54,6 +56,16 @@ public class User {
 	public void addSeed (Seed seed)
 	{
 		seeds.add(seed);
+		File f = new File("List_of_Users.txt");
+		try {
+			System.out.println("Trying to save users");
+			//System.out.println(user1.toString());
+			//System.out.println(users.get(2).toString());
+			userDatabase.saveTo(f);
+		} catch (IOException e) {
+			System.out.println("I couldn't save your users.");
+		}
+		//System.out.println(seeds(1).toString());
 	}
 	
 	/*
@@ -168,6 +180,6 @@ public class User {
       }
       
       public String toString(){
-    	  return firstName + ", " + lastName + ", " + username + ", " +password + ", " +role + ", " +email + ", " +newUser + ", " +validUser + ", " +valid + ", " +locked + ", " +numTry; 
+    	  return "User" + ", " + firstName + ", " + lastName + ", " + username + ", " +password + ", " +role + ", " +email + ", " +newUser + ", " +validUser + ", " +valid + ", " +locked + ", " +numTry; 
       }
 }
