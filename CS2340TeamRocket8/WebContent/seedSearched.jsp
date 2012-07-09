@@ -13,10 +13,13 @@
 </head>
 <body>
 		<%
-			if (request.getParameter("sn").equals("") && request.getParameter("zn").equals(""))
+			if (request.getParameter("sn").equals("") && request.getParameter("zn")==null)
 			{
+				
 				%>
+				<center>
 					Go back and put something please
+				</center>
 				<% 
 			}
 			else
@@ -27,7 +30,7 @@
 					     			);
 				if (userDatabase.haveSeed(seed))
 				{
-					if (!request.getParameter("sn").equals("") && !request.getParameter("zn").equals(""))
+					if (!request.getParameter("sn").equals("") && request.getParameter("zn")!=null)
 					{
 						%>
 						<center>
@@ -98,7 +101,7 @@
 				}
 				else
 				{
-					if (!request.getParameter("sn").equals("") && !request.getParameter("zn").equals(""))
+					if (!request.getParameter("sn").equals("") && request.getParameter("zn")!=null)
 					{
 						%>
 						<center>
@@ -133,7 +136,10 @@
 		%>
 		<center>
 		<form action="farmerHomepage.jsp">
-		<input type="submit" value="Go Back">
+		
+		<input type="button" value="Return to Search" onClick="location.href='searchSeed.jsp'">
+		<input type="submit" value="Go to your homepage">
+		
 		</form>
 		</center>
 </body>
