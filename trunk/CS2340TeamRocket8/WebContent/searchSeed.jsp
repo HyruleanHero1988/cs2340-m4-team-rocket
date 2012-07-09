@@ -15,7 +15,17 @@
 		Zone: <input type="text" name="zn"/><br>
 		<input type="submit" value="Search">
 		
-		<br><a href="farmerHomepage.jsp">Back to Home Page</a> 
+		</form>
+		<form action="farmerHomepage.jsp">
+		<center>
+		<input type="submit" value="Cancel">
+		
+		
+		
+		</center>
+		</form>
+		
+		
 	</form>
 	</center>
 	

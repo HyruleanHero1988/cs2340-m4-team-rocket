@@ -10,9 +10,9 @@
 <body>
 
     
-     <form action="CheckUserServlet">
+     <form action="loginPage.jsp">
 		<center>
-			 Congrats! Please Login :D
+			 Congrats! Please Login with your new username and password!
 		<input type="submit" value="Continue">
 		</center>
 		</form>

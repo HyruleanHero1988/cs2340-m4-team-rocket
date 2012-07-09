@@ -20,8 +20,16 @@
 
             Sorry, you are not a registered user! Please sign up first
             
-            	<br><a href="loginPage.jsp">Back to log in</a> 
+            	
          </center>
+         
+        
+			<form action="loginPage.jsp">
+			<center>
+			<input type="submit" value="Back to Login Page">		
+			</center>
+			</form>
+			
       </body>
 	
    </html>
