@@ -26,15 +26,12 @@
 			 	}
 			 	//currentUser.setNumTry(0);
          	%>
+         	
+         	<input type="button" value="Register" onClick="location.href='createUser.jsp'">
          	</center>
 		</form>
 		
-		<form action="createUser.jsp">
-		<center>
-		<input type="submit" value="Register">
 		
-		</center>
-		</form>
 		
 		
 	</body>
