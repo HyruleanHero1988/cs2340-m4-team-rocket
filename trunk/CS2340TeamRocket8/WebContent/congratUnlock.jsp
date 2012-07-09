@@ -30,7 +30,7 @@
 							{
 								users.get(i).setLocked(false);
 								%>
-								Unlocked <%= users.get(i).getUsername() %> <br>
+								User <%= users.get(i).getUsername() %> has been unlocked.<br>
 								
 								<% 
 							}
