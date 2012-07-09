@@ -27,6 +27,12 @@
             <br>
             Your account will be locked after 3 tries unless attempting to access admin account!
             
+            <form action="loginPage.jsp">
+			<center>
+			<input type="submit" value="Back to Login Page">		
+			</center>
+			</form>
+            
          </center>
       </body>
 	

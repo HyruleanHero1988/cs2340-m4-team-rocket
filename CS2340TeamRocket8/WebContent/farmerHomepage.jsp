@@ -58,9 +58,15 @@
            	Create Seeds
            	<form action="createSeed.jsp">
            	<input type="submit" value="Create">
-           	
-           	<br><a href="loginPage.jsp">Log out</a> 
            	</form>
+           	
+           	
+			<form action="loginPage.jsp">
+			
+			<input type="submit" value="Log Out">		
+			
+			</form>
+			
          </center>
 
       </body>

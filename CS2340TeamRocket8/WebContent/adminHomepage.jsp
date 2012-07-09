@@ -41,7 +41,12 @@
            	<form action="viewAllUser.jsp">
            	<input type="submit" value="View">
            	</form>
-           	<br><a href="loginPage.jsp">Log out</a> 
+           	</form>
+			<form action="loginPage.jsp">
+			<center>
+			<input type="submit" value="Log Out">		
+			</center>
+			</form> 
            	
          </center>
 	
