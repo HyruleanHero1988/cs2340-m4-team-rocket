@@ -11,8 +11,11 @@
 	<h1> Search By: </h1>
 	<form action="seedSearched.jsp">
 		Scientific Name: <input type="text" name="sn"/><br>
-		And/Or
-		Zone: <input type="text" name="zn"/><br>
+		And/Or<br>
+		Zone: <input type="radio" name="zn" value="3"/>3<input type="radio" name="zn" value="4"/>4<input type="radio" name="zn" value="5"/>5<input type="radio" name="zn" value="6"/>6<input type="radio" name="zn" value="7"/>7<input type="radio" name="zn" value="8"/>8<input type="radio" name="zn" value="9"/>9<input type="radio" name="zn" value="10"/>10
+		<center>
+		<img src="http://www.aroid.org/horticulture/zonemap/zonemapusa.gif" width="432" height="262" vspace="20" align="center">
+		</center>
 		<input type="submit" value="Search">
 		<input type="button" value="Cancel" onClick="location.href='farmerHomepage.jsp'">
 		
