@@ -26,7 +26,7 @@
 		<input type="submit" value="Cancel">
 		
 		
-		<br><a href="farmerHomepage.jsp">Back to Home Page</a> 
+		
 		</center>
 		</form>
 	</body>
