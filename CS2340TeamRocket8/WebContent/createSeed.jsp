@@ -12,7 +12,10 @@
 		<h1>Create Seed</h1><br>
 		Common Name: <input type="text" name="cn"/><br>
 		Scientific Name: <input type="text" name="sn"/><br>
-		Zone: <input type="text" name="zn"/><br>
+		Zone: <input type="radio" name="zn" value="3"/>3<input type="radio" name="zn" value="4"/>4<input type="radio" name="zn" value="5"/>5<input type="radio" name="zn" value="6"/>6<input type="radio" name="zn" value="7"/>7<input type="radio" name="zn" value="8"/>8<input type="radio" name="zn" value="9"/>9<input type="radio" name="zn" value="10"/>10
+		<center>
+		<img src="http://www.aroid.org/horticulture/zonemap/zonemapusa.gif" width="432" height="262" vspace="20" align="center">
+		</center>
 		Growing Tips: <input type="text" name="gt"/><br>
 		Harvesting Information: <input type="text" name="hi"/><br>
 		Growing Season: <input type="text" name="gs"/><br>
