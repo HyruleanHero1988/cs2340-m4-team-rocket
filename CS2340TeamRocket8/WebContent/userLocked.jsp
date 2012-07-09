@@ -20,6 +20,12 @@
          
            You have tried to login too many times. Your account is locked.<br>
            Please contact administrator!
+           
+           <form action="loginPage.jsp">
+			<center>
+			<input type="submit" value="Back to Login Page">		
+			</center>
+			</form>
             
            
          </center>
