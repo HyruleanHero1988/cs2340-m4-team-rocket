@@ -33,10 +33,6 @@
            	<form action="createUserAdmin.jsp">
            	<input type="submit" value="Create">
            	</form>
-           	See New Users since last server shutdown
-           	<form action="viewNewUser.jsp">
-           	<input type="submit" value="View">
-           	</form>
            	View all users
            	<form action="viewAllUser.jsp">
            	<input type="submit" value="View">
