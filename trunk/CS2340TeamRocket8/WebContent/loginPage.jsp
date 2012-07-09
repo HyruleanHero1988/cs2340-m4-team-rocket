@@ -8,6 +8,7 @@
 <title>Seed Application by Team Rocket</title>
 </head>
 	<body>
+	
 		<form action="LoginServlet">
 		<center>
 			<h1>Seed Application</h1>
@@ -19,14 +20,22 @@
 			<input type="submit" value="Login">
 			 <%
             	User currentUser = (User)session.getAttribute("currentSessionUser");
+			 	
+			 	if(currentUser!=null){
+			 		currentUser.setNumTry(0);
+			 	}
+			 	//currentUser.setNumTry(0);
          	%>
          	</center>
 		</form>
+		
 		<form action="createUser.jsp">
 		<center>
 		<input type="submit" value="Register">
+		
 		</center>
 		</form>
+		
 		
 	</body>
 </html>
