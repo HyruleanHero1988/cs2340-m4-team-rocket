@@ -14,16 +14,9 @@
 		And/Or
 		Zone: <input type="text" name="zn"/><br>
 		<input type="submit" value="Search">
-		
-		</form>
-		<form action="farmerHomepage.jsp">
-		<center>
-		<input type="submit" value="Cancel">
+		<input type="button" value="Cancel" onClick="location.href='farmerHomepage.jsp'">
 		
 		
-		
-		</center>
-		</form>
 		
 		
 	</form>

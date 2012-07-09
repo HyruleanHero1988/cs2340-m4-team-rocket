@@ -19,15 +19,9 @@
 		Quantity: <input type="text" name="qt"/><br>
 		
 		<input type="submit" value="Create">
+		<input type="button" value="Cancel" onClick="location.href='farmerHomepage.jsp'">
 		</center>
 		</form>
-		<form action="farmerHomepage.jsp">
-		<center>
-		<input type="submit" value="Cancel">
 		
-		
-		
-		</center>
-		</form>
 	</body>
 </html>

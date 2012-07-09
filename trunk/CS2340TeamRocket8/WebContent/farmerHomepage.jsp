@@ -59,7 +59,7 @@
            	<form action="createSeed.jsp">
            	<input type="submit" value="Create">
            	</form>
-           	
+           	</br>
            	
 			<form action="loginPage.jsp">
 			
