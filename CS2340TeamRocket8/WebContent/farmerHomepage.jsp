@@ -36,8 +36,8 @@
             		{
             			int j = i+1;
             			%>
-            				<%= j +": "+ seeds.get(i).getName() %>
-            				<br>
+            				<%= j +": "+ seeds.get(i).getName() %>, 
+            				
             				<%= "Quantity: "+ seeds.get(i).getQt() %>
             				<br>
             			<% 

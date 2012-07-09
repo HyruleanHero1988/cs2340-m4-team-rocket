@@ -72,7 +72,7 @@
 										<center>
 										<TABLE style="background-color: #ECE5B6;" WIDTH="50%">
 											<tr>
-												<%= "Name: " + users.get(i).getFirstName() + " Username: " + users.get(i).getUsername()+ " Seed: "+ seeds.get(j).getName() + " Zone: "+ seeds.get(j).getZone() + " Quantity: "+ seeds.get(j).getQt()   %>
+												<%= "Name: " + users.get(i).getFirstName() + ", Username: " + users.get(i).getUsername()+ ", Common name: " + seeds.get(j).getComName() + ", Scientific name: "+ seeds.get(j).getName() + ", Zone: "+ seeds.get(j).getZone() + ", Quantity: "+ seeds.get(j).getQt()   %>
 											</tr>
 										</TABLE>
 										</center>
@@ -87,7 +87,7 @@
 										<center>
 										<TABLE style="background-color: #ECE5B6;" WIDTH="50%">
 											<tr>
-												<%= "Name: " + users.get(i).getFirstName() + " Username: " + users.get(i).getUsername()+ " Seed: "+ seeds.get(j).getName() + " Zone: "+ seeds.get(j).getZone() + " Quantity: "+ seeds.get(j).getQt()   %>
+												<%= "Name: " + users.get(i).getFirstName() + ", Username: " + users.get(i).getUsername()+ ", Common name: " + seeds.get(j).getComName() + ", Scientific name: "+ seeds.get(j).getName() + ", Zone: "+ seeds.get(j).getZone() + ", Quantity: "+ seeds.get(j).getQt()   %>
 											</tr>
 										</TABLE>
 										</center>
