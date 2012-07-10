@@ -11,7 +11,7 @@
 <body>
 <center>
 	<%
-		if (request.getParameter("cn").equals("") || request.getParameter("sn").equals("") || request.getParameter("zn").equals("") || request.getParameter("qt").equals(""))
+		if (request.getParameter("cn").equals("") || request.getParameter("sn").equals("") || request.getParameter("zn")==null || request.getParameter("qt").equals(""))
 		{
 			%>
 				Needs Common name, Scientific name, Zone, and Quantity! please go back and Fill this out<br>
