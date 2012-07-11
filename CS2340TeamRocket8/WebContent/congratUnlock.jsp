@@ -9,7 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Unlocked User</title>
 </head>
-<body>
+<body bgcolor="#ffffcc">
 
     
      <form action="adminHomepage.jsp">
