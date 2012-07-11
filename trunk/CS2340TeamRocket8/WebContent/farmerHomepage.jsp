@@ -100,7 +100,7 @@ Padding-right: 10px;
            	
            	</p>
            	
-			<form action="loginPage.jsp">
+			<form action="LogoutServlet">
 			
 			<input type="submit" value="Log Out">		
 			
