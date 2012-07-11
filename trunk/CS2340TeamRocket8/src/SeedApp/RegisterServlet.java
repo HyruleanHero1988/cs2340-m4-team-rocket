@@ -49,6 +49,12 @@ public class RegisterServlet extends HttpServlet {
 		user.setPassword(request.getParameter("pw"));
 		user.setFirstName(request.getParameter("fn"));
 		user.setLastName(request.getParameter("ln"));
+		
+		if (request.getParameter("un").equals("") || request.getParameter("pw").equals("") || request.getParameter("fn").equals("") || request.getParameter("ln").equals("")){
+			response.sendRedirect("emptyFields.jsp");
+			
+		} else {
+		
 		if (request.getParameter("type") != null)
 		{
 			user.setRole(request.getParameter("type"));
@@ -86,6 +92,7 @@ public class RegisterServlet extends HttpServlet {
 			{
 				response.sendRedirect("cannotCreateUserAdmin.jsp");
 			}
+		}
 		}
 	}
 
