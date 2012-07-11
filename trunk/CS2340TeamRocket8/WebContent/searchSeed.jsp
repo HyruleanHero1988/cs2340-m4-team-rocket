@@ -55,7 +55,7 @@ Padding-right: 10px;
 		<img src="http://www.aroid.org/horticulture/zonemap/zonemapusa.gif" width="432" height="262" vspace="20" align="center">
 		</center>
 		<input type="submit" value="Search">
-		<input type="button" value="Cancel" onClick="location.href='farmerHomepage.jsp'">
+		<input type="button" value="Back to Homepage" onClick="location.href='farmerHomepage.jsp'">
 		
 		
 		

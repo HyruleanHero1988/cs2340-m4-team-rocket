@@ -96,15 +96,12 @@ Padding-right: 10px;
             	}
             %>
             
-            Search for Available Seeds
            	<form action="searchSeed.jsp">
-           	<input type="submit" value="Search">
+           	<input type="submit" value="Search for a seed">
+           	<input type="button" value="Create a seed" onClick="location.href='createUser.jsp'">
            	</form>
            	<p>
-           	Create Seeds
-           	<form action="createSeed.jsp">
-           	<input type="submit" value="Create">
-           	</form>
+           	
            	</p>
            	
 			<form action="loginPage.jsp">

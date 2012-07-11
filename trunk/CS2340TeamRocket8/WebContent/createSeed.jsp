@@ -61,7 +61,7 @@ Padding-right: 10px;
 		Quantity: <input type="text" name="qt"/><br>
 		
 		<input type="submit" value="Create">
-		<input type="button" value="Cancel" onClick="location.href='farmerHomepage.jsp'">
+		<input type="button" value="Back to Homepage" onClick="location.href='farmerHomepage.jsp'">
 		</center>
 		</form>
 		
