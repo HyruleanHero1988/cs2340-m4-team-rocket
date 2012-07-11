@@ -6,13 +6,53 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Seed Application by Team Rocket</title>
+<style type="text/css">
+body
+{
+background-color:#1BBD67;
+}
+h1
+{
+color:#66CCFF;
+text-align:center;
+font-family:"Helvetica";
+}
+h2
+{
+color:white;
+text-align:center;
+font-family:"Helvetica";
+font-size:25px;
+}
+p
+{
+color:white;
+font-family:"Times New Roman";
+font-size:20px;
+
+}
+#banner {margin: 0 auto;
+Width: 770px;
+Height: 200px;
+Border: #66CCFF solid 10px;
+Background: #ffffff ;
+Color:#ff0000;
+Font-size:18px;
+Text-align: right;
+Padding-right: 10px;
+}
+</style>
+
 </head>
 	<body>
+	<div id="banner"><IMG SRC = "http://i.imgur.com/TOiLy.png"></div>
 	
 		<form action="LoginServlet">
 		<center>
-			<h1>Seed Application</h1>
-			<h2>Team Rocket(8)</h2>
+			
+			<h2>Welcome!</h2>
+			<p>Please log in using an existing account or create a new account.</p>
+			<br>
 			Username: <input type="text" name="un"/><br>
 			Password: <input type="text" name="pw"/><br>
 
