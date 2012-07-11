@@ -38,11 +38,12 @@
            	<input type="submit" value="View">
            	</form>
            	</form>
-			<form action="loginPage.jsp">
-			<center>
+			
+			<form action="LogoutServlet">
+			
 			<input type="submit" value="Log Out">		
-			</center>
-			</form> 
+			
+			</form>
            	
          </center>
 	
