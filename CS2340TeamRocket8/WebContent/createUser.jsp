@@ -46,7 +46,7 @@ Padding-right: 10px;
 <div id="banner"><IMG SRC = "http://i.imgur.com/HtUX7.png"></div>
 		<form action="RegisterServlet">
 		<center>
-		<h1>Create a New User</h1><br>
+		<h1>Create a New User</h1>
 		<p>
 		Username: <input type="text" name="un"/><br>
 		Password: <input type="text" name="pw"/><br>
