@@ -61,8 +61,7 @@ Padding-right: 10px;
 	<div id="banner"><IMG SRC = "http://i.imgur.com/TOiLy.png"></div>
       </head>
 	
-      <body>
-      <div id="banner"><IMG SRC = "http://i.imgur.com/TOiLy.png"></div>
+ 
 
          <center>
          <p>
