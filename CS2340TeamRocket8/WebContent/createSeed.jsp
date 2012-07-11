@@ -46,7 +46,7 @@ Padding-right: 10px;
 	<div id="banner"><IMG SRC = "http://i.imgur.com/TOiLy.png"></div>
 		<form action="congratNewSeed.jsp">
 		<center>
-		<h1>Create Seed</h1><br>
+		<h1>Create Seed</h1>
 		<p>
 		Common Name: <input type="text" name="cn"/><br>
 		Scientific Name: <input type="text" name="sn"/><br>

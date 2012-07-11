@@ -52,7 +52,7 @@ Padding-right: 10px;
 			
 			<h1>Welcome!</h1>
 			<p>Please log in using an existing account or create a new account.</p>
-			<br>
+			
 			<p>
 			Username: <input type="text" name="un"/><br>
 			Password: <input type="text" name="pw"/><br>
