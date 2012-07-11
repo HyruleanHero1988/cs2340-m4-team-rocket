@@ -100,6 +100,7 @@ Padding-right: 10px;
            	<form action="searchSeed.jsp">
            	<input type="submit" value="Search">
            	</form>
+           	<p>
            	Create Seeds
            	<form action="createSeed.jsp">
            	<input type="submit" value="Create">
