@@ -69,6 +69,11 @@ public class userDatabase {
 			users.add(user8);
 			users.add(user9);
 			users.add(user10);*/
+			/*System.out.println(System.getProperty("user.dir"));
+			System.out.println(new File(".").getAbsolutePath());
+			
+			System.setProperty("user.dir", );*/
+			
 			
 			File f = new File("List_of_Users.txt");
 			
@@ -89,11 +94,11 @@ public class userDatabase {
 				System.out.println("I couldn't save your users.");
 			}*/
 			
-			System.out.println("Database is Empty! Creating Users");
+			//System.out.println("Database is Empty! Creating Users");
 		}
 		else
 		{
-			System.out.println("Users already exists!");
+			//System.out.println("Users already exists!");
 		}
 	}
 	

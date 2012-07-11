@@ -50,7 +50,7 @@ Padding-right: 10px;
 		<form action="LoginServlet">
 		<center>
 			
-			<h2>Welcome!</h2>
+			<h1>Welcome!</h1>
 			<p>Please log in using an existing account or create a new account.</p>
 			<br>
 			<p>
