@@ -27,7 +27,7 @@ font-size:25px;
 p
 {
 color:white;
-font-family:"Times New Roman";
+font-family:"Helvetica";
 font-size:20px;
 
 }
