@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Cannot Create User</title>
 </head>
-<body>
+<body bgcolor="#ffffcc">
 	
 	<form action="createUserAdmin.jsp">
 		<center>

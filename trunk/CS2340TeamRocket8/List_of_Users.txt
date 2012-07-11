@@ -8,3 +8,4 @@ User, Locked, User, LockedUser, 1234, farmer, null, false, true, true, true, 0
 Seed, null, Buffalo Grass, 3, null, null, null, 1256
 Seed, null, Browntop, 7, null, null, null, 34
 Seed, null, Butterfly Weed, 3, null, null, null, 23
+User, test, test, TestUser, test, farmer, null, true, true, true, false, 0
