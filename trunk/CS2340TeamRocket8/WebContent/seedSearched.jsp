@@ -37,8 +37,8 @@ font-size:20px;
 }
 #banner {margin: 0 auto;
 Width: 770px;
-Height: 200px;
-Border: #66CCFF solid 10px;
+Height: 125px;
+Border: #333300 solid 10px;
 Background: #ffffff ;
 Color:#ff0000;
 Font-size:18px;
@@ -48,7 +48,7 @@ Padding-right: 10px;
 </style>
 </head>
 <body>
-<div id="banner"><IMG SRC = "http://i.imgur.com/TOiLy.png"></div>
+<div id="banner"><IMG SRC = "http://i.imgur.com/HtUX7.png"></div>
 	<%
 			if (request.getParameter("sn").equals("") && request.getParameter("zn")==null)
 			{
