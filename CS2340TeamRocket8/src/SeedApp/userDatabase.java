@@ -155,9 +155,16 @@ public class userDatabase {
 				return false;
 			}
 		}
-		User createUser = new User(user.getFirstName(), user.getLastName(), user.getUsername(), user.getPassword());
-		createUser.setNewUser(true);
-		users.add(createUser);
+		
+		
+		if(user.getRole().equals("farmer")){
+			User createUser = new User(user.getFirstName(), user.getLastName(), user.getUsername(), user.getPassword());
+			createUser.setNewUser(true);
+			users.add(createUser);
+		} else {
+			User createUser = new User(user.getFirstName(), user.getLastName(), user.getUsername(), user.getPassword(), "admin", true, true);
+			users.add(createUser);
+		}
 		
 		File f = new File("List_of_Users.txt");
 		try {			

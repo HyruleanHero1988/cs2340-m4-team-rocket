@@ -5,15 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Congrats! You've made a new account</title>
+<title>You've made a new account</title>
 </head>
-<body>
+<body bgcolor="#ffffcc">
 
     
      <form action="adminHomepage.jsp">
 		<center>
-			 Congrats! Please Continue :D
-		<input type="submit" value="Continue">
+			 Account has been created.
+		<input type="submit" value="Back to admin homepage">
 		</center>
 		</form>
 </body>
