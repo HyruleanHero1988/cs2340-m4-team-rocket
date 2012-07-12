@@ -64,7 +64,7 @@ Padding-right: 10px;
             <br>
             Your account will be locked after 3 tries unless attempting to access admin account!
             
-            <form action="loginPage.jsp">
+            <form action="index.jsp">
 			<center>
 			<input type="submit" value="Back to Login Page">		
 			</center>
