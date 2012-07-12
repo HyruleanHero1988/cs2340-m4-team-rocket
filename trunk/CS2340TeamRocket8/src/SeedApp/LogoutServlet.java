@@ -37,7 +37,7 @@ public class LogoutServlet extends HttpServlet {
 			//session.setAttribute("currentSessionUser", user);
 			SeedApp.RegisterServlet.session=null;
 			SeedApp.LoginServlet.session=null;
-			response.sendRedirect("loginPage.jsp");
+			response.sendRedirect("index.jsp");
 			
 		}
 		catch(Throwable theException)

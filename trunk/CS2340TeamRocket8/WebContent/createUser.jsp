@@ -54,7 +54,7 @@ Padding-right: 10px;
 		Last Name: <input type="text" name="ln"/><br>
 		
 		<input type="submit" value="Create">
-		<input type="button" value="Cancel" onClick="location.href='loginPage.jsp'">
+		<input type="button" value="Cancel" onClick="location.href='index.jsp'">
 		</center>
 		
 	</body>
