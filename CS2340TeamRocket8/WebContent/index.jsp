@@ -53,8 +53,8 @@ Padding-right: 10px;
 			<p>Please log in using an existing account or create a new account.</p>
 			
 			<p>
-			Username: <input type="text" name="un"/><br>
-			Password: <input type="text" name="pw"/><br>
+			Username: <input type="text" name="un" size="17"/><br>
+			Password: <input type="password" name="pw"size="15"/><br>
 
 			
 			<input type="submit" value="Login">

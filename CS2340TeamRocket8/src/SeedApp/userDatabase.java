@@ -200,24 +200,29 @@ public class userDatabase {
 				}
 				else
 				{
-					int num = users.get(i).getNumTry();
-					num++;
-					users.get(i).setNumTry(num);
-					user.setNumTry(num);
-					//check to see if the acc is locked 3 times
-					if (num == 3)
+					if(!users.get(i).isLocked())
 					{
-						//if admin dont lock him
-						if (users.get(i).getRole().equals("admin"))
+						int num = users.get(i).getNumTry();
+						num++;
+						users.get(i).setNumTry(num);
+						
+						user.setNumTry(num);
+						//check to see if the acc is locked 3 times
+						if (num == 3)
 						{
-							
-						}
-						else //not admin
-						{
-							user.setLocked(true);
-							users.get(i).setLocked(true);
+							//if admin dont lock him
+							if (users.get(i).getRole().equals("admin"))
+							{
+								
+							}
+							else //not admin
+							{
+								user.setLocked(true);
+								users.get(i).setLocked(true);
+							}
 						}
 					}
+					
 				}
 			}	
 		}

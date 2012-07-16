@@ -159,7 +159,10 @@ public class User {
       public void setLocked(boolean newLocked)
       {
     	  locked = newLocked;
-    	  numTry = 0;
+    	  
+    		  numTry = 0;  
+    	  
+    	  
       }
       
       public boolean isValidUser()
