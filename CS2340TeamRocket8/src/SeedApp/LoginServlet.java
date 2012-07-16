@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
 /**
  * @author Team Rocket
  * @version 1.0
@@ -37,8 +38,11 @@ public class LoginServlet extends HttpServlet {
 			user.setUserName(request.getParameter("un"));
 			user.setPassword(request.getParameter("pw"));
 			
-			user = loginCheck.login(user);
+			//user = loginCheck.login(user);
+			user = userDatabase.check(user);
 				
+			
+			
 			if(user.isValid())
 			{
 				if(user.isLocked())
@@ -59,6 +63,7 @@ public class LoginServlet extends HttpServlet {
 					{
 						session = request.getSession(true);
 						session.setAttribute("currentSessionUser", user);
+						user.setNumTry(0);
 						response.sendRedirect("farmerHomepage.jsp");
 					}
 				}
@@ -83,6 +88,7 @@ public class LoginServlet extends HttpServlet {
 					{
 						session = request.getSession(true);
 						session.setAttribute("currentSessionUser", user);
+						
 						response.sendRedirect("wrongpassLogin.jsp");
 					}
 				}	
