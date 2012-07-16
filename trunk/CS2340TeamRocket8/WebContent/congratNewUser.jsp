@@ -47,7 +47,7 @@ Padding-right: 10px;
 <div id="banner"><IMG SRC = "http://i.imgur.com/HtUX7.png"></div>
 
     
-     <form action="index.jsp">
+     <form action="LogoutServlet">
 		<center>
 		<p>
 			 Congrats! Please Login with your new username and password!

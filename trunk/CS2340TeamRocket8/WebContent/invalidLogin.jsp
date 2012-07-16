@@ -60,7 +60,7 @@ Padding-right: 10px;
          </center>
          
         
-			<form action="index.jsp">
+			<form action="LogoutServlet">
 			<center>
 			<input type="submit" value="Back to Login Page">		
 			</center>
