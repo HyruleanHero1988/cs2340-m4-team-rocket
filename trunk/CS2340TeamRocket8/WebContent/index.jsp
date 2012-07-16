@@ -59,12 +59,13 @@ Padding-right: 10px;
 			
 			<input type="submit" value="Login">
 			 <%
-            	User currentUser = (User)session.getAttribute("currentSessionUser");
-			 	
+            
+			 User currentUser = (User)session.getAttribute("currentSessionUser");
+			 System.out.println("user is " + currentUser);	
 			 	if(currentUser!=null){
 			 		currentUser.setNumTry(0);
 			 	}
-			 	//currentUser.setNumTry(0);
+			 	
          	%>
          	
          	<input type="button" value="Register" onClick="location.href='createUser.jsp'">
